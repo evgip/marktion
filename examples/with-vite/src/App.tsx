@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
-import { ReactEditor, ReactEditorRef, ReactSSR, ReactEditorProps } from 'marktion';
+import { ReactEditor, ReactEditorRef, ReactSSR, ReactEditorProps, ReactAIEditor } from 'marktion';
 
-import 'marktion/dist/style.css';
+// import 'marktion/dist/style.css';
 
 const INIT_MARKDOWN = [import.meta.env.VITE_README_ZH, import.meta.env.VITE_README_EN];
 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div style={{ padding: 25 }}>
-      <button
+      {/* <button
         style={{ margin: 10 }}
         onClick={() => {
           const index = Number(!Boolean(lang));
@@ -42,12 +42,14 @@ function App() {
         }}
       >
         Toggle DarkMode
-      </button>
+      </button> */}
 
-      {render === 'CSR' && (
+      <ReactAIEditor content={INIT_MARKDOWN[lang]} />
+
+      {/* {render === 'CSR' && (
         <ReactEditor dark={darkMode} ref={marktionRef} content={INIT_MARKDOWN[lang]} />
       )}
-      {render === 'SSR' && <ReactSSR dark={darkMode} content={INIT_MARKDOWN[lang]} />}
+      {render === 'SSR' && <ReactSSR dark={darkMode} content={INIT_MARKDOWN[lang]} />} */}
     </div>
   );
 }

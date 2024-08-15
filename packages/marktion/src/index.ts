@@ -11,3 +11,6 @@ export * from './plugin-portal';
 export * from './plugin-slash';
 export * from './plugin-suggestion';
 export * from './plugin-upload';
+
+export * from './react-editor';
+export * from './marktion-state';
